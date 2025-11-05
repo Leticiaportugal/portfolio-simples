@@ -1,28 +1,90 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Letícia</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Letícia Colombo Portugal — Desenvolvedora Front-End</title>
+  <meta name="description" content="Portfólio de Letícia Colombo Portugal — Desenvolvedora Front-End focada em interfaces acessíveis, performáticas e responsivas." />
+
+  <!-- OG / SEO básico -->
+  <meta property="og:title" content="Letícia Colombo Portugal — Desenvolvedora Front-End" />
+  <meta property="og:description" content="Interfaces acessíveis, performáticas e responsivas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://leticiaportugal.github.io/portfolio-simples/" />
+  <meta property="og:image" content="assets/og-image.jpg" /> <!-- TODO: adicione uma imagem 1200x630 -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" /> <!-- TODO: adicione um favicon -->
 </head>
 <body>
-    <header>
-        <h1>Letícia Colombo Portugal</h1>
-        <p>Desenvolvedora Front-End</p>
-    </header>
+  <header class="container nav">
+    <a class="brand" href="#top" aria-label="Ir para o topo">letícia<span>.</span></a>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-    <section class="about">
-        <h2>Sobre mim</h2>
-        <p>Desenvolvedora Front-End com foco em criação de interfaces organizadas, responsivas e alinhadas a boas práticas de código.</p>
-    </section>
-
-    <section class="links">
-        <h2>Meus links</h2>
-        <ul>
-            <li><a href="https://github.com/Leticiaportugal" target="_blank">GitHub</a></li>
-            <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero container" aria-label="Apresentação">
+      <div class="hero__text">
+        <h1>Oi, eu sou a <span class="highlight">Letícia</span> 👋</h1>
+        <p class="subtitle">
+          Desenvolvedora <strong>Front-End</strong> focada em criar
+          interfaces <strong>acessíveis</strong>, <strong>performáticas</strong> e <strong>responsivas</strong>.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/SEU-LINK" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/leticiaportugal" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+        <ul class="stack" aria-label="Tecnologias">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>TypeScript</li>
         </ul>
+      </div>
+      <figure class="hero__photo">
+        <img src="assets/foto.jpg" alt="Foto de Letícia" loading="lazy" />
+      </figure>
     </section>
-</body>
-</html>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="container about">
+      <h2>Sobre mim</h2>
+      <p>
+        Tenho experiência com desenvolvimento de interfaces, componentização e boas práticas de acessibilidade (WCAG),
+        além de foco em performance (Core Web Vitals). Gosto de criar design systems simples e bem documentados.
+      </p>
+      <ul class="badges">
+        <li>Semântica</li>
+        <li>A11y</li>
+        <li>Responsividade</li>
+        <li>Performance</li>
+        <li>Testes</li>
+      </ul>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="container projects">
+      <h2>Projetos em destaque</h2>
+
+      <article class="card">
+        <div class="card__media">
+          <img src="assets/projeto-1.jpg" alt="Screenshot do Projeto 1" loading="lazy" />
+        </div>
+        <div class="card__body">
+          <h3>Projeto 1 — Dashboard responsiva</h3>
+          <p>
+            Dashboard com gráficos, dark mode e temas, construída com React + Zustand.
+            Lighthouse 95+ e acessibilidade AA.
+          </p>
+          <div class="card__tags">
+            <span>React</span><span>TypeScript</span><span>Vite</span>
+          </div>
+          <div class="card__actions">
+            <a class="btn small primary" href="https://SEU-DEPLOY" target="_blank" rel="noreferrer">Ver online</a>
+            <a class="btn small ghost" href="https://github.com/SEU-REPO" target="_bla_
