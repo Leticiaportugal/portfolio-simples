@@ -1,179 +1,188 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Letícia Colombo Portugal — Front-End Developer</title>
-  <meta name="description" content="Portfólio de Letícia Colombo Portugal: interfaces responsivas, acessíveis e com foco em performance." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Letícia Colombo Portugal — Front-End Developer</title>
+<meta name="description" content="Interfaces responsivas, acessíveis e com foco em performance." />
 
-  <!-- OG / SEO -->
-  <meta property="og:title" content="Letícia Colombo Portugal — Front-End Developer" />
-  <meta property="og:description" content="Interfaces responsivas, acessíveis e com foco em performance." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://leticiaportugal.github.io/portfolio-simples/" />
-  <meta property="og:image" content="assets/og-image.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Figtree:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="assets/favicon.svg" />
+<style>
+/* ======= CSS EMBUTIDO ======= */
+:root{
+  --bg:#0a0b0f; --bg-alt:#0d1117; --surface:rgba(255,255,255,.06);
+  --glass:rgba(255,255,255,.08); --stroke:rgba(255,255,255,.12);
+  --text:#e7ecf3; --muted:#9aa4b2; --brand:#8a7dff; --brand-2:#00e0b8;
+  --shadow:0 10px 30px rgba(0,0,0,.35); --radius:16px; --radius-sm:12px;
+}
+:root[data-theme="light"]{
+  --bg:#fff; --bg-alt:#f6f7fb; --surface:rgba(0,0,0,.03); --glass:rgba(255,255,255,.8);
+  --stroke:rgba(0,0,0,.08); --text:#1d232f; --muted:#5c6675; --shadow:0 8px 24px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0} img{max-width:100%;display:block}
+body{
+  font-family:Figtree,Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",Ubuntu,"Helvetica Neue",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 600px at 10% -10%, rgba(138,125,255,.25), transparent 60%),
+    radial-gradient(900px 600px at 110% 0%, rgba(0,224,184,.22), transparent 60%),
+    var(--bg);
+  line-height:1.65; letter-spacing:.2px;
+}
+.container{width:min(1100px,92%); margin-inline:auto}
+.nav{display:flex;align-items:center;justify-content:space-between; padding:18px 0; position:sticky; top:0; z-index:50; backdrop-filter:blur(8px)}
+.brand{font-weight:800; text-decoration:none; color:var(--text); font-size:1.4rem; letter-spacing:.4px}
+.brand-dot{display:inline-block;width:.6rem;height:.6rem;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand-2));margin-left:.25rem;vertical-align:middle;box-shadow:0 0 18px rgba(138,125,255,.7),0 0 18px rgba(0,224,184,.6);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:.8}}
+.nav nav a,.nav nav .btn{color:var(--muted); text-decoration:none; margin-left:16px; font-weight:700}
+.nav nav a:hover{color:var(--text)}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;padding:70px 0 40px}
+.kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.22em;font-weight:800;font-size:.78rem;margin:0 0 12px}
+.hero__text h1{font-size:clamp(2.2rem,4vw,3.2rem);margin:0 0 12px;font-weight:800}
+.highlight{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 18px rgba(138,125,255,.3)}
+.subtitle{color:var(--muted);font-size:1.12rem;max-width:60ch}
+.cta{margin:22px 0 14px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{border:1px solid var(--stroke);padding:11px 15px;border-radius:12px;text-decoration:none;color:var(--text);font-weight:800;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow);transform:translateZ(0);transition:transform .2s ease,box-shadow .2s ease,opacity .2s;backdrop-filter:blur(6px)}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));border:none;color:#0a0c0f}
+.btn.ghost{background:var(--surface)}
+.btn.small{padding:8px 12px;font-size:.95rem}
+.btn.tiny{padding:6px 10px;font-size:.85rem}
+.stack{list-style:none;padding:0;margin:18px 0 0;display:flex;gap:10px;flex-wrap:wrap}
+.stack li{border:1px dashed var(--stroke);padding:6px 10px;border-radius:999px;font-family:"Fira Code",monospace;font-size:.9rem;color:var(--muted)}
+.hero__photo{border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke)}
+.card.glass{background:linear-gradient(180deg,var(--glass),transparent);box-shadow:var(--shadow)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--stroke),transparent);margin:24px auto 8px;width:100%}
+.about,.projects,.contact{padding:54px 0}
+.section-title{font-size:clamp(1.6rem,2.8vw,2.1rem);margin:0 0 10px;font-weight:800}
+.lead{color:var(--muted);font-size:1.05rem;max-width:70ch}
+.badges{list-style:none;padding:0;margin:16px 0 0;display:flex;gap:10px;flex-wrap:wrap}
+.badges li{background:var(--surface);border:1px solid var(--stroke);padding:8px 12px;border-radius:10px;font-weight:700;color:var(--text);box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.project{display:grid;grid-template-columns:1fr 1.1fr;gap:22px;border:1px solid var(--stroke);border-radius:var(--radius);padding:16px;margin:18px 0 26px;position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.project:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.card__media img{width:100%;height:auto;border-radius:var(--radius-sm)}
+.card__body h3{margin:0 0 6px;font-size:1.25rem}
+.card__body p{color:var(--muted);margin:0 0 12px}
+.chip-list{list-style:none;padding:0;display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.chip-list li{font-size:.86rem;border:1px dashed var(--stroke);padding:4px 9px;border-radius:999px;color:var(--muted)}
+.card__actions{display:flex;gap:10px;flex-wrap:wrap}
+.contact .contact__list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px;max-width:560px}
+.contact .icon{opacity:.9;width:22px;display:inline-block;text-align:center}
+.contact .link{color:var(--text);text-decoration:none;border-bottom:1px solid transparent}
+.contact .link:hover{border-color:var(--brand)}
+.footer{padding:26px 0 70px;color:var(--muted);text-align:center;border-top:1px solid var(--stroke)}
+.whatsapp{position:fixed;right:18px;bottom:18px;z-index:60;background:linear-gradient(135deg,#25D366,#20b256);color:#072110;width:54px;height:54px;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(0,0,0,.35);text-decoration:none;border:1px solid rgba(0,0,0,.12);transition:transform .2s ease,box-shadow .2s ease}
+.whatsapp:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 16px 36px rgba(0,0,0,.4)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.project{grid-template-columns:1fr}}
+:focus-visible{outline:3px solid var(--brand); outline-offset:2px}
+</style>
 </head>
 <body>
-  <!-- NAV -->
-  <header class="container nav">
-    <a class="brand" href="#top" aria-label="Ir para o topo">
-      letícia<span class="brand-dot"></span>
-    </a>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-      <button id="themeToggle" class="btn tiny ghost" aria-label="Alternar tema">🌓</button>
-    </nav>
-  </header>
+<header class="container nav">
+  <a class="brand" href="#top">letícia<span class="brand-dot"></span></a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero container" aria-label="Apresentação">
-      <div class="hero__text">
-        <p class="kicker">Front-End • WordPress • UI</p>
-        <h1>
-          Oi, eu sou a <span class="highlight">Letícia</span> 👋
-        </h1>
-        <p class="subtitle">
-          Eu transformo <strong>design</strong> em <strong>interfaces responsivas</strong>, acessíveis e rápidas — do HTML/CSS/JS ao WordPress (Divi/Elementor).
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#projetos">Ver projetos</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/leticia-portugal/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn ghost" href="https://github.com/leticiaportugal" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-
-        <ul class="stack" aria-label="Tecnologias">
-          <li>HTML5</li><li>CSS3 / Grid / Flex</li><li>JavaScript</li>
-          <li>WordPress</li><li>Divi</li><li>Elementor</li>
-          <li>Acessibilidade</li><li>SEO básico</li>
-        </ul>
+<main id="top">
+  <section class="hero container">
+    <div class="hero__text">
+      <p class="kicker">Front-End • WordPress • UI</p>
+      <h1>Oi, eu sou a <span class="highlight">Letícia</span> 👋</h1>
+      <p class="subtitle">Eu transformo <strong>design</strong> em <strong>interfaces responsivas</strong>, acessíveis e rápidas — do HTML/CSS/JS ao WordPress (Divi/Elementor).</p>
+      <div class="cta">
+        <a class="btn primary" href="#projetos">Ver projetos</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/leticia-portugal/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/leticiaportugal" target="_blank" rel="noreferrer">GitHub</a>
       </div>
-
-      <figure class="hero__photo card glass">
-        <img src="assets/foto.jpg" alt="Foto de Letícia" loading="lazy" />
-      </figure>
-    </section>
-
-    <div class="divider container" role="presentation"></div>
-
-    <!-- SOBRE -->
-    <section id="sobre" class="container about">
-      <h2 class="section-title">Sobre mim</h2>
-      <p class="lead">
-        Desenvolvedora <strong>Front-End</strong> com foco em padrões web, acessibilidade (WCAG) e performance (Core Web Vitals).
-        Entrego páginas e LPs <strong>fiéis ao layout</strong>, com comportamento polido e SEO pronto pra ranquear.
-      </p>
-
-      <ul class="badges">
-        <li>Pixel-perfect</li>
-        <li>Responsividade</li>
-        <li>Componentização</li>
-        <li>Formulários & CTAs</li>
-        <li>Boas práticas</li>
+      <ul class="stack" aria-label="Tecnologias">
+        <li>HTML5</li><li>CSS3 / Grid / Flex</li><li>JavaScript</li>
+        <li>WordPress</li><li>Divi</li><li>Elementor</li>
+        <li>Acessibilidade</li><li>SEO básico</li>
       </ul>
-    </section>
+    </div>
+    <figure class="hero__photo card glass">
+      <img src="assets/foto.jpg" alt="Foto de Letícia" loading="lazy" />
+    </figure>
+  </section>
 
-    <div class="divider container" role="presentation"></div>
+  <div class="divider container"></div>
 
-    <!-- PROJETOS -->
-    <section id="projetos" class="container projects">
-      <h2 class="section-title">Projetos em destaque</h2>
+  <section id="sobre" class="container about">
+    <h2 class="section-title">Sobre mim</h2>
+    <p class="lead">Desenvolvedora <strong>Front-End</strong> com foco em padrões web, acessibilidade (WCAG) e performance (Core Web Vitals). Entrego páginas e LPs <strong>fiéis ao layout</strong>, com comportamento polido e SEO pronto pra ranquear.</p>
+    <ul class="badges">
+      <li>Pixel-perfect</li><li>Responsividade</li><li>Componentização</li><li>Formulários & CTAs</li><li>Boas práticas</li>
+    </ul>
+  </section>
 
-      <!-- CARD 1 -->
-      <article class="card project glass">
-        <div class="card__media">
-          <img src="assets/projeto-1.jpg" alt="Landing page institucional com formulário e depoimentos" loading="lazy" />
+  <div class="divider container"></div>
+
+  <section id="projetos" class="container projects">
+    <h2 class="section-title">Projetos em destaque</h2>
+
+    <article class="card project glass">
+      <div class="card__media">
+        <img src="assets/projeto-1.jpg" alt="Landing page institucional com formulário e depoimentos" loading="lazy" />
+      </div>
+      <div class="card__body">
+        <h3>Landing page institucional</h3>
+        <p>LP otimizada para conversão com layout responsivo, formulários com validação e SEO básico.</p>
+        <ul class="chip-list"><li>HTML</li><li>CSS</li><li>JS</li><li>WordPress</li><li>Elementor</li></ul>
+        <div class="card__actions">
+          <a class="btn small primary" href="https://SEU-DEPLOY" target="_blank" rel="noreferrer">Ver online</a>
+          <a class="btn small ghost" href="https://github.com/SEU-REPO" target="_blank" rel="noreferrer">Código</a>
         </div>
-        <div class="card__body">
-          <h3>Landing page institucional</h3>
-          <p>LP otimizada para conversão com layout responsivo, formulários com validação e SEO básico.</p>
-          <ul class="chip-list">
-            <li>HTML</li><li>CSS</li><li>JS</li><li>WordPress</li><li>Elementor</li>
-          </ul>
-          <div class="card__actions">
-            <a class="btn small primary" href="https://SEU-DEPLOY" target="_blank" rel="noreferrer">Ver online</a>
-            <a class="btn small ghost" href="https://github.com/SEU-REPO" target="_blank" rel="noreferrer">Código</a>
-          </div>
+      </div>
+    </article>
+
+    <article class="card project glass">
+      <div class="card__media">
+        <img src="assets/projeto-2.jpg" alt="Catálogo de produtos com carrinho" loading="lazy" />
+      </div>
+      <div class="card__body">
+        <h3>Catálogo + carrinho</h3>
+        <p>Catálogo responsivo com carrinho e feedbacks de interação (toasts/transições) para UX macia.</p>
+        <ul class="chip-list"><li>JS</li><li>SPA</li><li>A11y</li><li>Performance</li></ul>
+        <div class="card__actions">
+          <a class="btn small primary" href="https://SEU-DEPLOY" target="_blank" rel="noreferrer">Ver online</a>
+          <a class="btn small ghost" href="https://github.com/SEU-REPO" target="_blank" rel="noreferrer">Código</a>
         </div>
-      </article>
+      </div>
+    </article>
+  </section>
 
-      <!-- CARD 2 -->
-      <article class="card project glass">
-        <div class="card__media">
-          <img src="assets/projeto-2.jpg" alt="Catálogo de produtos com carrinho" loading="lazy" />
-        </div>
-        <div class="card__body">
-          <h3>Catálogo + carrinho</h3>
-          <p>Catálogo responsivo com carrinho e feedbacks de interação (toasts/transições) para UX macia.</p>
-          <ul class="chip-list">
-            <li>JS</li><li>SPA</li><li>A11y</li><li>Performance</li>
-          </ul>
-          <div class="card__actions">
-            <a class="btn small primary" href="https://SEU-DEPLOY" target="_blank" rel="noreferrer">Ver online</a>
-            <a class="btn small ghost" href="https://github.com/SEU-REPO" target="_blank" rel="noreferrer">Código</a>
-          </div>
-        </div>
-      </article>
-    </section>
+  <div class="divider container"></div>
 
-    <div class="divider container" role="presentation"></div>
+  <section id="contato" class="container contact">
+    <h2 class="section-title">Contato</h2>
+    <p class="lead">Curtiu meu trabalho? Vamos conversar! 💬</p>
+    <ul class="contact__list">
+      <li><span class="icon">✉️</span> <a class="link" href="mailto:leticia.portugal232@gmail.com">leticia.portugal232@gmail.com</a></li>
+      <li><span class="icon">📱</span> <a class="link" href="https://wa.me/5511963064020" target="_blank" rel="noreferrer">+55 11 96306-4020</a></li>
+      <li><span class="icon">🔗</span> <a class="link" href="https://www.linkedin.com/in/leticia-portugal/" target="_blank" rel="noreferrer">linkedin.com/in/leticia-portugal</a></li>
+    </ul>
+  </section>
+</main>
 
-    <!-- CONTATO -->
-    <section id="contato" class="container contact">
-      <h2 class="section-title">Contato</h2>
-      <p class="lead">Curtiu meu trabalho? Vamos conversar! 💬</p>
+<footer class="container footer">
+  <small>© <span id="y"></span> Letícia C. Portugal — Feito com ♥ no Brasil.</small>
+</footer>
 
-      <ul class="contact__list">
-        <li>
-          <span class="icon" aria-hidden="true">✉️</span>
-          <a class="link" href="mailto:leticia.portugal232@gmail.com">leticia.portugal232@gmail.com</a>
-        </li>
-        <li>
-          <span class="icon" aria-hidden="true">📱</span>
-          <a class="link" href="https://wa.me/5511963064020" target="_blank" rel="noreferrer">+55 11 96306-4020</a>
-        </li>
-        <li>
-          <span class="icon" aria-hidden="true">🔗</span>
-          <a class="link" href="https://www.linkedin.com/in/leticia-portugal/" target="_blank" rel="noreferrer">linkedin.com/in/leticia-portugal</a>
-        </li>
-      </ul>
-    </section>
-  </main>
+<a class="whatsapp" href="https://wa.me/5511963064020" target="_blank" aria-label="Abrir WhatsApp">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <path fill="currentColor" d="M20.5 3.5A11 11 0 0 0 3.3 18.2L2 22l3.9-1a11 11 0 0 0 5.3 1.3h.1a11 11 0 0 0 9.2-17.8Zm-9.1 16.1h-.1a9.2 9.2 0 0 1-4.7-1.3l-.3-.2-2.8.7.8-2.7-.2-.3A9.2 9.2 0 1 1 11.4 19.6Zm5-6.8c-.3-.1-1.7-.8-1.9-.8s-.4-.1-.6.1-.7.8-.9 1-.3.2-.6.1-1.1-.4-2-1.2c-.7-.7-1.2-1.6-1.3-1.9s0-.4.1-.6l.5-.7c.1-.1.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3s-.9.8-.9 2 .9 2.3 1 2.5 1.8 2.8 4.3 4c.6.3 1 .4 1.4.6.6.2 1.1.2 1.5.1.5-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.2-.1-.4-.2-.7-.3Z"/>
+  </svg>
+</a>
 
-  <footer class="container footer">
-    <small>© <span id="y"></span> Letícia C. Portugal — Feito com ♥ no Brasil.</small>
-  </footer>
-
-  <!-- Botão flutuante WhatsApp -->
-  <a class="whatsapp" href="https://wa.me/5511963064020" target="_blank" aria-label="Abrir WhatsApp">
-    <!-- ícone simples SVG -->
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-      <path fill="currentColor" d="M20.5 3.5A11 11 0 0 0 3.3 18.2L2 22l3.9-1a11 11 0 0 0 5.3 1.3h.1a11 11 0 0 0 9.2-17.8Zm-9.1 16.1h-.1a9.2 9.2 0 0 1-4.7-1.3l-.3-.2-2.8.7.8-2.7-.2-.3A9.2 9.2 0 1 1 11.4 19.6Zm5-6.8c-.3-.1-1.7-.8-1.9-.8s-.4-.1-.6.1-.7.8-.9 1-.3.2-.6.1-1.1-.4-2-1.2c-.7-.7-1.2-1.6-1.3-1.9s0-.4.1-.6l.5-.7c.1-.1.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3s-.9.8-.9 2 .9 2.3 1 2.5 1.8 2.8 4.3 4c.6.3 1 .4 1.4.6.6.2 1.1.2 1.5.1.5-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.2-.1-.4-.2-.7-.3Z"/>
-    </svg>
-  </a>
-
-  <script>
-    // ano automático
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // alternância de tema (salva preferência)
-    const btn = document.getElementById('themeToggle');
-    const root = document.documentElement;
-    const pref = localStorage.getItem('theme');
-    if (pref) root.setAttribute('data-theme', pref);
-    btn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', current);
-      localStorage.setItem('theme', current);
-    });
-  </script>
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
