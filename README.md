@@ -1,28 +1,19 @@
-# 🌟 Portfólio Simples
+# Portfólio — Letícia Portugal
 
-Este é um projeto inicial de portfólio desenvolvido com **HTML e CSS**, com o objetivo de praticar a criação de interfaces simples, organizadas e responsivas.
+Portfólio profissional de Letícia Colombo Portugal, desenvolvedora Front-End e Web com experiência em CRM, Salesforce Marketing Cloud, WordPress e automação de marketing.
 
-## 🚀 Objetivo do Projeto
-Criar uma página simples que apresente:
-- Seu nome
-- Uma imagem de perfil
-- Uma breve descrição
-- Links para outras redes (como GitHub, LinkedIn e Portfólio)
+## Tecnologias
 
-## 🛠 Tecnologias Utilizadas
-- **HTML5**
-- **CSS3**
+- HTML5 semântico
+- CSS3, Grid e Flexbox
+- JavaScript
+- Design responsivo
+- Acessibilidade e boas práticas de SEO
 
-## 📌 Estrutura do Projeto
+## Conteúdo
 
+O site apresenta resumo profissional, competências, trajetória e projetos selecionados nas áreas de desenvolvimento web, e-mail development e marketing automation.
 
-## ✅ Aprendizados
-Neste projeto foi possível trabalhar:
-- Estruturação de página com HTML
-- Estilização com CSS
-- Organização de projeto
-- Publicação no GitHub
+## Publicação
 
----
-
-🔗 *Este é o primeiro projeto da minha jornada de desenvolvimento. Novas melhorias virão!* ✨
+O projeto é publicado pelo GitHub Pages.
